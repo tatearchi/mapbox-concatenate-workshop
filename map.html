@@ -55,6 +55,8 @@
     pitch: map.getPitch(),
     bearing: map.getBearing(),
   };
+  
+    map.flyTo(location);
 
   console.log(JSON.stringify(location, null, 2));
 });
