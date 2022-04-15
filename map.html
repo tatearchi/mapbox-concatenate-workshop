@@ -67,8 +67,12 @@ const clickedFeatures = map.queryRenderedFeatures(event.point, { layers: [ 'prac
 if (clickedFeatures.length > 0) {
   clicked.title = clickedFeatures[0].properties.title;
   clicked.description = clickedFeatures[0].properties.description;
-}
 
+  const popup = new mapboxgl.Popup() // create the popup
+    .setLngLat(clicked.location.center) // position it at the clicked point
+    .setHTML('<h3>' + clicked.title + '</h3><p>' + clicked.description + '</p>') // add some HTML content
+    .addTo(map); // place the popup on the map
+}
 console.log(JSON.stringify(clicked, null, 2));
 });
 
