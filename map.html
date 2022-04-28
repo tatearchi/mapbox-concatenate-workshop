@@ -70,7 +70,7 @@ if (clickedFeatures.length > 0) {
 
   const popup = new mapboxgl.Popup() // create the popup
     .setLngLat(clicked.location.center) // position it at the clicked point
-    .setHTML('<h3>' + clicked.title + '</h3><p>' + clicked.description + '</p>') // add some HTML content
+    .setHTML('<h3>' + clicked.name + '</h3><p>' + clicked.built + '</p>') // add some HTML content
     .addTo(map); // place the popup on the map
 }
 console.log(JSON.stringify(clicked, null, 2));
