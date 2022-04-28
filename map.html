@@ -62,11 +62,11 @@
   location: location
 };
 
-const clickedFeatures = map.queryRenderedFeatures(event.point, { layers: [ 'practice-santaclara']});
+const clickedFeatures = map.queryRenderedFeatures(event.point, { layers: [ 'berlinrebuilt']});
 
 if (clickedFeatures.length > 0) {
-  clicked.title = clickedFeatures[0].properties.title;
-  clicked.description = clickedFeatures[0].properties.description;
+  clicked.name = clickedFeatures[0].properties.name;
+  clicked.built = clickedFeatures[0].properties.built;
 
   const popup = new mapboxgl.Popup() // create the popup
     .setLngLat(clicked.location.center) // position it at the clicked point
